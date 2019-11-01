@@ -2966,6 +2966,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Home/NewCommentPartial.cshtml",
+      "TargetPath": "Views/Home/NewCommentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/NewMessagePartial.cshtml",
+      "TargetPath": "Views/Home/NewMessagePartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/Index.cshtml",
       "TargetPath": "Views/Home/Index.cshtml",
       "FileKind": "mvc"
@@ -2988,6 +2998,11 @@
     {
       "FilePath": "Views/_ViewStart.cshtml",
       "TargetPath": "Views/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/TheWall.cshtml",
+      "TargetPath": "Views/Home/TheWall.cshtml",
       "FileKind": "mvc"
     },
     {

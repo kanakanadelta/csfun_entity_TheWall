@@ -28,6 +28,8 @@ namespace TheWall
         {
             
             services.AddDbContext<WallContext>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
+
+            services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -43,6 +45,7 @@ namespace TheWall
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>

@@ -1,0 +1,35 @@
+@{
+  ViewData["Title"] = "The Wall";
+}
+
+<div>
+  <p>Welcome to your wall, @ViewBag.UserName (id# @ViewBag.UserId)</p>
+  <!-- Post a new message -->
+  <partial name="NewMessagePartial">
+  <div id="the-wall">
+    @foreach(var m in ViewBag.Messages)
+    {
+      <div>
+        <p>
+            @m.Author.FirstName @m.Author.LastName - @m.CreatedAt.ToString("MMMM dd yyyy")
+        </p>
+        <p style="padding:0 10px;">
+          @m.MessageText
+        </p>
+        <div>
+          <!-- <partial name="NewCommentPartial"> -->
+            <div style="width:80%;margin:0 auto;">
+              <ul>
+                
+              </ul>
+              <form action='messages/@m.MessageId/NewComment' method="POST">
+                <label for="commentText">Add a comment:</label>
+                <textarea name="commentText" style="width:100%;" required></textarea>
+                <input type="submit" value="Comment" style="float:right;background-color:rgb(90, 90, 245);color:white;">
+              </form>
+            </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
