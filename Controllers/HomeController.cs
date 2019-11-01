@@ -138,8 +138,15 @@ namespace TheWall.Controllers
                 .OrderByDescending(m => m.CreatedAt)
                 .Include(m => m.Author)
                 .ToList();
+
+            List<Comment> comments = dbContext
+                .Comments
+                .Include(c => c.Message)
+                .Include(c=> c.User)
+                .ToList();
                 
             ViewBag.Messages = messages;
+            ViewBag.Comments = comments;
 
             return View();
         }

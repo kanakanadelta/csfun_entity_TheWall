@@ -20,7 +20,16 @@
           <!-- <partial name="NewCommentPartial"> -->
             <div style="width:80%;margin:0 auto;">
               <ul>
-                
+                @foreach(var c in @ViewBag.Comments)
+                {
+                  if(@c.MessageId == @m.MessageId)
+                  {
+                    <div>
+                      <p>@c.User.FirstName @c.User.LastName - @c.CreatedAt.ToString("MMMM dd yyyy")</p>
+                      <p>@c.CommentText</p>
+                    </div>
+                  }
+                }
               </ul>
               <form action='messages/@m.MessageId/NewComment' method="POST">
                 <label for="commentText">Add a comment:</label>
